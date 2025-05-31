@@ -5,94 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulrahman Adham - Art Director & Brand Strategist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a365d;
-            --accent: #c49b3f;
-            --secondary: #8a6d3b;
-            --light: #f8f5f0;
-            --dark: #2c3e50;
-            --highlight: #e74c3c;
-            --card-bg: rgba(255, 255, 255, 0.9);
+            --primary: #0A84FF;
+            --accent: #5E5CE6;
+            --background: #000000;
+            --surface: #1C1C1E;
+            --card: rgba(28, 28, 30, 0.7);
+            --text: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --glass: rgba(30, 30, 32, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #f8f5f0 0%, #e8e3d8 100%);
-            color: var(--dark);
-            line-height: 1.7;
-            padding: 20px;
+            background: var(--background);
+            color: var(--text);
             min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(94, 92, 230, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(10, 132, 255, 0.1) 0%, transparent 40%);
+            z-index: -1;
         }
         
         .resume-container {
             max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 30px;
-            background: white;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
+            position: relative;
+        }
+        
+        /* Glass effect */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
             overflow: hidden;
-            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         
-        /* Decorative elements */
-        .corner-decoration {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            z-index: 0;
-        }
-        
-        .corner-tl {
-            top: -60px;
-            left: -60px;
-            background: var(--accent);
-            clip-path: polygon(0 0, 0 100%, 100% 0);
-            opacity: 0.15;
-        }
-        
-        .corner-br {
-            bottom: -60px;
-            right: -60px;
-            background: var(--primary);
-            clip-path: polygon(100% 100%, 100% 0, 0 100%);
-            opacity: 0.15;
-        }
-        
-        /* Sidebar styling */
+        /* Profile sidebar */
         .sidebar {
-            background: var(--primary);
-            color: white;
             padding: 40px 25px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .profile-image {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid var(--accent);
-            margin: 0 auto 20px;
-            background: #ddd;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
             position: relative;
+            overflow: hidden;
         }
         
         .profile-image::before {
@@ -105,45 +101,51 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: bold;
-            color: var(--primary);
-            background: var(--light);
+            color: white;
         }
         
         .profile-header h1 {
             font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
             margin-bottom: 5px;
         }
         
         .profile-header h2 {
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 400;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
         }
         
         .contact-info {
-            margin: 30px 0;
+            width: 100%;
+            margin: 20px 0;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            border-radius: 14px;
             transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
         }
         
         .contact-item:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         
         .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -152,44 +154,37 @@
         }
         
         .section-title {
-            font-size: 1.3rem;
-            margin: 30px 0 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            width: 100%;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent);
-            position: relative;
-            color: var(--accent);
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
+            border-bottom: 1px solid var(--border);
         }
         
         .skills-grid {
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr;
             gap: 15px;
         }
         
         .skill-category {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         
         .skill-category h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
             display: flex;
             align-items: center;
         }
         
         .skill-category h3 i {
             margin-right: 10px;
+            color: var(--primary);
         }
         
         .skills-list {
@@ -199,130 +194,158 @@
         }
         
         .skill-tag {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 5px 12px;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 12px;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-tag:hover {
-            background: var(--accent);
-            color: var(--primary);
-            transform: translateY(-3px);
+            font-weight: 500;
         }
         
         .languages {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
+            width: 100%;
         }
         
         .language-tag {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid var(--accent);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
+            background: rgba(10, 132, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         
-        /* Main content styling */
+        /* Main content */
         .main-content {
-            padding: 40px 30px;
-            position: relative;
-            z-index: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
         
         .summary-card {
-            background: var(--card-bg);
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            border-left: 4px solid var(--accent);
+            border-radius: 24px;
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            animation: fadeIn 1s ease-out;
         }
         
         .summary-card h2 {
-            color: var(--primary);
             font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .summary-card p {
             font-size: 1.1rem;
             line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .experience-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-header i {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(10, 132, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
         }
         
         .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-left: 15px;
-            border-left: 3px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
-            background: var(--card-bg);
             padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            border-radius: 24px;
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            max-height: 90px;
         }
         
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -36px;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: white;
-            border: 3px solid var(--accent);
+        .timeline-item.expanded {
+            max-height: 500px;
+            background: rgba(28, 28, 30, 0.8);
         }
         
         .job-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 15px;
         }
         
         .job-title {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary);
-        }
-        
-        .job-date {
+            font-size: 1.2rem;
             font-weight: 600;
-            color: var(--accent);
-            font-size: 1.1rem;
         }
         
         .job-company {
-            font-style: italic;
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
             display: flex;
             align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: var(--text-secondary);
         }
         
-        .job-company i {
-            margin-right: 8px;
-            color: var(--accent);
+        .job-date {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .job-summary {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
         
         .job-details {
-            padding-left: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding-left: 10px;
+            border-left: 2px solid var(--primary);
+            margin-left: 5px;
+        }
+        
+        .timeline-item.expanded .job-details {
+            max-height: 1000px;
         }
         
         .job-details li {
@@ -330,63 +353,110 @@
             position: relative;
             padding-left: 25px;
             line-height: 1.6;
+            color: var(--text-secondary);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .timeline-item.expanded .job-details li {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .job-details li::before {
             content: "▹";
             position: absolute;
             left: 0;
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-        
-        .highlight {
-            font-weight: 600;
             color: var(--primary);
         }
         
+        .highlight {
+            color: var(--text);
+            font-weight: 500;
+        }
+        
         .activities-section {
-            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .activities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
         
         .activity-card {
-            background: var(--card-bg);
             padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
-            border-top: 3px solid var(--accent);
         }
         
         .activity-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: rgba(10, 132, 255, 0.3);
         }
         
         .activity-card h3 {
-            color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
         
         .activity-card h3 i {
-            margin-right: 10px;
-            color: var(--accent);
+            color: var(--primary);
         }
         
         .activity-meta {
-            color: var(--secondary);
-            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
             margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .activity-card p {
             font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
+        
+        /* Scroll animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
         
         /* Responsive design */
@@ -402,57 +472,58 @@
         
         @media (max-width: 600px) {
             body {
-                padding: 10px;
+                padding: 15px;
             }
             
-            .summary-card,
-            .timeline-item,
-            .activity-card {
-                padding: 20px;
+            .main-content, .sidebar {
+                padding: 25px;
             }
             
             .activities-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="resume-container">
-        <div class="corner-decoration corner-tl"></div>
-        <div class="corner-decoration corner-br"></div>
-        
+    <div class="resume-container glass">
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar glass">
             <div class="profile-header">
-                <div class="profile-image"></div>
+                <div class="profile-image floating"></div>
                 <h1>Abdulrahman Adham</h1>
                 <h2>Art Director & Brand Strategist</h2>
             </div>
             
             <div class="contact-info">
-                <div class="contact-item">
+                <div class="contact-item animate">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                     <div>+966 53 621 2915</div>
                 </div>
                 
-                <div class="contact-item">
+                <div class="contact-item animate delay-1">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>abd.moh.adham@gmail.com</div>
                 </div>
                 
-                <div class="contact-item">
+                <div class="contact-item animate delay-2">
                     <div class="contact-icon">
                         <i class="fas fa-globe"></i>
                     </div>
                     <div>abdulrahman-adham.myportfolio.com</div>
                 </div>
                 
-                <div class="contact-item">
+                <div class="contact-item animate delay-3">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
@@ -460,10 +531,10 @@
                 </div>
             </div>
             
-            <h3 class="section-title">Skills & Expertise</h3>
+            <h3 class="section-title animate delay-4">Skills & Expertise</h3>
             
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category animate delay-4">
                     <h3><i class="fas fa-paint-brush"></i> Design Tools</h3>
                     <div class="skills-list">
                         <div class="skill-tag">Photoshop</div>
@@ -479,7 +550,7 @@
                     </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category animate delay-5">
                     <h3><i class="fas fa-lightbulb"></i> Core Expertise</h3>
                     <div class="skills-list">
                         <div class="skill-tag">Brand Strategy</div>
@@ -493,8 +564,8 @@
                 </div>
             </div>
             
-            <h3 class="section-title">Languages</h3>
-            <div class="languages">
+            <h3 class="section-title animate delay-6">Languages</h3>
+            <div class="languages animate delay-6">
                 <div class="language-tag">Arabic (Native)</div>
                 <div class="language-tag">English (Fluent)</div>
                 <div class="language-tag">Turkish (Professional)</div>
@@ -503,131 +574,145 @@
         
         <!-- Main Content -->
         <div class="main-content">
-            <div class="summary-card">
+            <div class="summary-card animate">
                 <h2>Professional Profile</h2>
                 <p>Strategic Art Director with 8+ years of experience building powerful brand identities and leading creative teams. Expertise in developing comprehensive brand systems, executing multi-channel campaigns, and driving market recognition through compelling visual storytelling. Proven ability to align creative vision with business objectives across diverse industries.</p>
             </div>
             
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="timeline">
-                <!-- TTG Entertainment -->
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <div class="job-title">Art Director & Creative Strategist</div>
-                        <div class="job-date">Apr 2024 - Present</div>
-                    </div>
-                    <div class="job-company">
-                        <i class="fas fa-building"></i> TTG Entertainment | Istanbul, Turkey
-                    </div>
-                    <ul class="job-details">
-                        <li>Lead creative vision for <span class="highlight">brand development projects</span> across MENA region</li>
-                        <li>Direct cross-functional teams in <span class="highlight">brand strategy, visual identity</span>, and campaign execution</li>
-                        <li>Develop comprehensive brand guidelines for consistent multi-channel implementation</li>
-                        <li>Designed and published <span class="highlight">full interactive games</span> across 100+ websites including MENA region</li>
-                    </ul>
+            <div class="experience-section">
+                <div class="section-header animate delay-1">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Professional Experience</h2>
                 </div>
                 
-                <!-- FunDream Games -->
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <div class="job-title">Art Director & Project Manager</div>
-                        <div class="job-date">Apr 2022 - May 2024</div>
+                <div class="timeline">
+                    <!-- TTG Entertainment -->
+                    <div class="timeline-item animate delay-1" onclick="toggleExpand(this)">
+                        <div class="job-header">
+                            <div class="job-title">Art Director & Creative Strategist</div>
+                            <div class="job-company">
+                                <i class="fas fa-building"></i> TTG Entertainment | Istanbul, Turkey
+                                <div class="job-date">Apr 2024 - Present</div>
+                            </div>
+                        </div>
+                        <div class="job-summary">Leading creative vision for brand development across MENA region</div>
+                        <ul class="job-details">
+                            <li>Lead creative vision for <span class="highlight">brand development projects</span> across MENA region</li>
+                            <li>Direct cross-functional teams in <span class="highlight">brand strategy, visual identity</span>, and campaign execution</li>
+                            <li>Develop comprehensive brand guidelines for consistent multi-channel implementation</li>
+                            <li>Designed and published <span class="highlight">full interactive games</span> across 100+ websites including MENA region</li>
+                        </ul>
                     </div>
-                    <div class="job-company">
-                        <i class="fas fa-building"></i> FunDream Games | Remote
+                    
+                    <!-- FunDream Games -->
+                    <div class="timeline-item animate delay-2" onclick="toggleExpand(this)">
+                        <div class="job-header">
+                            <div class="job-title">Art Director & Project Manager</div>
+                            <div class="job-company">
+                                <i class="fas fa-building"></i> FunDream Games | Remote
+                                <div class="job-date">Apr 2022 - May 2024</div>
+                            </div>
+                        </div>
+                        <div class="job-summary">Revitalized brand identity system and managed creative projects</div>
+                        <ul class="job-details">
+                            <li>Revitalized <span class="highlight">brand identity system</span> increasing market recognition by 40%</li>
+                            <li>Managed portfolio of <span class="highlight">120+ creative projects</span> with 95% on-time delivery</li>
+                            <li>Designed and executed marketing campaigns across digital and print channels</li>
+                            <li>Designed the company's <span class="highlight">main website and key selling points</span></li>
+                            <li>Raised over <span class="highlight">$200K in investment funding</span></li>
+                            <li>Improved CTR of company promotions to <span class="highlight">meet market standards</span></li>
+                        </ul>
                     </div>
-                    <ul class="job-details">
-                        <li>Revitalized <span class="highlight">brand identity system</span> increasing market recognition by 40%</li>
-                        <li>Managed portfolio of <span class="highlight">120+ creative projects</span> with 95% on-time delivery</li>
-                        <li>Designed and executed marketing campaigns across digital and print channels</li>
-                        <li>Designed the company's <span class="highlight">main website and key selling points</span></li>
-                        <li>Raised over <span class="highlight">$200K in investment funding</span></li>
-                        <li>Improved CTR of company promotions to <span class="highlight">meet market standards</span></li>
-                    </ul>
-                </div>
-                
-                <!-- ROOBET -->
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <div class="job-title">Senior Creative Lead</div>
-                        <div class="job-date">Mar 2021 - Mar 2022</div>
+                    
+                    <!-- ROOBET -->
+                    <div class="timeline-item animate delay-3" onclick="toggleExpand(this)">
+                        <div class="job-header">
+                            <div class="job-title">Senior Creative Lead</div>
+                            <div class="job-company">
+                                <i class="fas fa-building"></i> ROOBET | Remote / USA
+                                <div class="job-date">Mar 2021 - Mar 2022</div>
+                            </div>
+                        </div>
+                        <div class="job-summary">Directed visual brand development and redesigned key products</div>
+                        <ul class="job-details">
+                            <li>Directed visual brand development for international markets</li>
+                            <li>Created psychology-driven <span class="highlight">brand assets and marketing collateral</span></li>
+                            <li>Redesigned/remastered <span class="highlight">3 games</span> with completely new designs</li>
+                            <li>Increased company market value from <span class="highlight">$1B to $1.8B</span></li>
+                            <li>Increased monthly active users to <span class="highlight">100K</span></li>
+                            <li>Collaborated with Marketing Department to combine visual appeal with business strategy, <span class="highlight">boosting conversion rates by 15%</span></li>
+                        </ul>
                     </div>
-                    <div class="job-company">
-                        <i class="fas fa-building"></i> ROOBET | Remote / USA
+                    
+                    <!-- Groovy Antoid -->
+                    <div class="timeline-item animate delay-4" onclick="toggleExpand(this)">
+                        <div class="job-header">
+                            <div class="job-title">Project Manager & Lead Designer</div>
+                            <div class="job-company">
+                                <i class="fas fa-building"></i> Groovy Antoid
+                                <div class="job-date">Oct 2019 - Mar 2021</div>
+                            </div>
+                        </div>
+                        <div class="job-summary">Managed game studio projects and business development</div>
+                        <ul class="job-details">
+                            <li>Managed <span class="highlight">10+ game studio projects</span> with 100% on-time delivery</li>
+                            <li>Maintained quality standards across all deliverables</li>
+                            <li>Led business development initiatives that saw a <span class="highlight">150% growth</span></li>
+                            <li>Formed <span class="highlight">5+ strategic partnerships</span></li>
+                            <li>Conducted market analysis to identify new business opportunities</li>
+                            <li>Resulted in the launch of <span class="highlight">3 successful hit game titles</span></li>
+                        </ul>
                     </div>
-                    <ul class="job-details">
-                        <li>Directed visual brand development for international markets</li>
-                        <li>Created psychology-driven <span class="highlight">brand assets and marketing collateral</span></li>
-                        <li>Redesigned/remastered <span class="highlight">3 games</span> with completely new designs</li>
-                        <li>Increased company market value from <span class="highlight">$1B to $1.8B</span></li>
-                        <li>Increased monthly active users to <span class="highlight">100K</span></li>
-                        <li>Collaborated with Marketing Department to combine visual appeal with business strategy, <span class="highlight">boosting conversion rates by 15%</span></li>
-                    </ul>
-                </div>
-                
-                <!-- Groovy Antoid -->
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <div class="job-title">Project Manager & Lead Designer</div>
-                        <div class="job-date">Oct 2019 - Mar 2021</div>
+                    
+                    <!-- Hero Games -->
+                    <div class="timeline-item animate delay-5" onclick="toggleExpand(this)">
+                        <div class="job-header">
+                            <div class="job-title">Game Artist & UI/UX Designer</div>
+                            <div class="job-company">
+                                <i class="fas fa-building"></i> Hero Games
+                                <div class="job-date">Mar 2017 - Oct 2019</div>
+                            </div>
+                        </div>
+                        <div class="job-summary">Led art process for successful mobile games</div>
+                        <ul class="job-details">
+                            <li>Led the art process for over <span class="highlight">20 games</span>, with 5 published titles</li>
+                            <li>Created the highly successful <span class="highlight">Wood Shop</span>, achieving <span class="highlight">60 million downloads</span></li>
+                            <li>Designed icons, UI elements, and marketing visuals for iOS and Android games</li>
+                            <li>Contributed to an <span class="highlight">increase in downloads</span> for published titles</li>
+                            <li>Conducted competitive product research for new game concepts</li>
+                            <li>Collaborated with cross-functional teams to ensure seamless integration of art assets</li>
+                        </ul>
                     </div>
-                    <div class="job-company">
-                        <i class="fas fa-building"></i> Groovy Antoid
-                    </div>
-                    <ul class="job-details">
-                        <li>Managed <span class="highlight">10+ game studio projects</span> with 100% on-time delivery</li>
-                        <li>Maintained quality standards across all deliverables</li>
-                        <li>Led business development initiatives that saw a <span class="highlight">150% growth</span></li>
-                        <li>Formed <span class="highlight">5+ strategic partnerships</span></li>
-                        <li>Conducted market analysis to identify new business opportunities</li>
-                        <li>Resulted in the launch of <span class="highlight">3 successful hit game titles</span></li>
-                    </ul>
-                </div>
-                
-                <!-- Hero Games -->
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <div class="job-title">Game Artist & UI/UX Designer</div>
-                        <div class="job-date">Mar 2017 - Oct 2019</div>
-                    </div>
-                    <div class="job-company">
-                        <i class="fas fa-building"></i> Hero Games
-                    </div>
-                    <ul class="job-details">
-                        <li>Led the art process for over <span class="highlight">20 games</span>, with 5 published titles</li>
-                        <li>Created the highly successful <span class="highlight">Wood Shop</span>, achieving <span class="highlight">60 million downloads</span></li>
-                        <li>Designed icons, UI elements, and marketing visuals for iOS and Android games</li>
-                        <li>Contributed to an <span class="highlight">increase in downloads</span> for published titles</li>
-                        <li>Conducted competitive product research for new game concepts</li>
-                        <li>Collaborated with cross-functional teams to ensure seamless integration of art assets</li>
-                    </ul>
                 </div>
             </div>
             
             <!-- Activities Section -->
             <div class="activities-section">
-                <h2 class="section-title">Activities & Recognition</h2>
+                <div class="section-header animate delay-6">
+                    <i class="fas fa-star"></i>
+                    <h2>Activities & Recognition</h2>
+                </div>
+                
                 <div class="activities-grid">
-                    <div class="activity-card">
+                    <div class="activity-card animate delay-6">
                         <h3><i class="fas fa-chalkboard-teacher"></i> Bootcamp Mentor</h3>
                         <div class="activity-meta">MCIT - ZigZag, Saudi Arabia | 2023</div>
                         <p>Guided 190+ students at 5 different cities in game development, fostering rapid prototype creation within a week.</p>
                     </div>
                     
-                    <div class="activity-card">
+                    <div class="activity-card animate delay-7">
                         <h3><i class="fas fa-microphone"></i> Conference Speaker</h3>
                         <div class="activity-meta">HGConf, Remotely | 2022</div>
                         <p>Explored HCG design evolution, discussed strategies for game success, and predicted the industry's future.</p>
                     </div>
                     
-                    <div class="activity-card">
+                    <div class="activity-card animate delay-6">
                         <h3><i class="fas fa-users"></i> Conference Panelist</h3>
                         <div class="activity-meta">HGConf, Remotely | 2022</div>
                         <p>Discussed Game markets, analyzed the Turkish ecosystem, and shared insights with studios.</p>
                     </div>
                     
-                    <div class="activity-card">
+                    <div class="activity-card animate delay-7">
                         <h3><i class="fas fa-paint-brush"></i> Ink Painting Mentor</h3>
                         <div class="activity-meta">Association for Art and Culture, Dammam | 2015</div>
                         <p>Provided concise guidance on ink types and techniques for artistic enrichment.</p>
@@ -638,26 +723,47 @@
     </div>
 
     <script>
-        // Add subtle animations to timeline items
+        // Toggle job expand/collapse
+        function toggleExpand(element) {
+            element.classList.toggle('expanded');
+            
+            // Close other expanded items
+            const allItems = document.querySelectorAll('.timeline-item');
+            allItems.forEach(item => {
+                if (item !== element && item.classList.contains('expanded')) {
+                    item.classList.remove('expanded');
+                }
+            });
+        }
+        
+        // Scroll animation
         document.addEventListener('DOMContentLoaded', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            const activityCards = document.querySelectorAll('.activity-card');
+            // Initialize animations for elements with animate class
+            const animateElements = document.querySelectorAll('.animate');
             
-            // Animate timeline items
-            timelineItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
             
-            // Animate activity cards
-            activityCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, timelineItems.length * 200 + index * 150);
-            });
+            // Function to handle scroll events
+            function handleScroll() {
+                animateElements.forEach(element => {
+                    if (isInViewport(element) && !element.classList.contains('animated')) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Initial check
+            handleScroll();
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', handleScroll);
         });
     </script>
 </body>
