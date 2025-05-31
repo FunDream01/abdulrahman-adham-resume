@@ -343,6 +343,30 @@
             transform: translateY(-5px);
         }
         
+        /* Nationality badge */
+        .nationality-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgba(227, 10, 23, 0.15);
+            border: 1px solid rgba(227, 10, 23, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .nationality-badge span {
+            font-weight: 600;
+            margin-left: 10px;
+            color: #fff;
+        }
+        
+        .nationality-badge i {
+            color: #E30A17; /* Turkish red */
+            font-size: 1.5rem;
+        }
+        
         /* Main content */
         .main-content {
             padding: 40px;
@@ -718,6 +742,14 @@
             }
         }
         
+        @keyframes turkishFlagWave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
         .animate {
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
@@ -770,6 +802,11 @@
                 align-items: flex-start;
                 gap: 15px;
             }
+            
+            .nationality-badge {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -798,6 +835,12 @@
             <!-- Sidebar -->
             <div class="sidebar glass animate">
                 <div class="profile-image floating"></div>
+                
+                <!-- Nationality Badge -->
+                <div class="nationality-badge animate delay-3">
+                    <i class="fas fa-flag" style="color: #E30A17; animation: turkishFlagWave 3s infinite;"></i>
+                    <span>Turkish Nationality</span>
+                </div>
                 
                 <div class="contact-info">
                     <div class="contact-item animate delay-1">
@@ -866,7 +909,7 @@
             <div class="main-content glass animate delay-1">
                 <div class="summary-card">
                     <h2>About Me</h2>
-                    <p>Strategic Art Director with 8+ years of experience building powerful brand identities and leading creative teams. Expertise in developing comprehensive brand systems, executing multi-channel campaigns, and driving market recognition through compelling visual storytelling. Proven ability to align creative vision with business objectives across diverse industries.</p>
+                    <p>Turkish Art Director with 8+ years of experience building powerful brand identities and leading creative teams. Expertise in developing comprehensive brand systems, executing multi-channel campaigns, and driving market recognition through compelling visual storytelling. Proven ability to align creative vision with business objectives across diverse industries.</p>
                 </div>
                 
                 <div class="experience-section">
