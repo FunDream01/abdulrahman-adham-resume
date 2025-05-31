@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulrahman Adham | Art Director & Brand Strategist</title>
+    <title>Abdulrahmane Adham | Art Director & Brand Strategist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -31,7 +31,6 @@
             background: var(--background);
             color: var(--text);
             min-height: 100vh;
-            padding: 0;
             overflow-x: hidden;
             position: relative;
             background: radial-gradient(circle at 20% 30%, rgba(94, 92, 230, 0.1) 0%, transparent 40%),
@@ -55,7 +54,7 @@
         .header {
             padding: 30px 5%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             position: relative;
             z-index: 10;
@@ -70,25 +69,9 @@
             color: transparent;
         }
         
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-        }
-        
         /* Hero Section */
         .hero {
-            padding: 80px 5%;
+            padding: 60px 5% 100px;
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
@@ -96,10 +79,10 @@
             z-index: 5;
         }
         
-        .hero h1 {
+        .hero-name {
             font-size: 4rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -107,8 +90,8 @@
             line-height: 1.2;
         }
         
-        .hero h2 {
-            font-size: 1.8rem;
+        .hero-title {
+            font-size: 2.2rem;
             font-weight: 500;
             color: var(--text-secondary);
             margin-bottom: 40px;
@@ -129,6 +112,8 @@
             transition: var(--transition);
             border: none;
             font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-primary {
@@ -491,7 +476,7 @@
         
         /* Activities Section */
         .activities-section {
-            padding: 60px 5%;
+            padding: 60px 5% 100px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -636,20 +621,17 @@
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
+            .hero-name {
                 font-size: 3rem;
             }
             
-            .hero h2 {
+            .hero-title {
                 font-size: 1.4rem;
-            }
-            
-            .nav-links {
-                display: none;
             }
             
             .hero-btns {
                 flex-direction: column;
+                align-items: center;
             }
             
             .section-title {
@@ -659,29 +641,28 @@
             .activities-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">Abdulrahman Adham</div>
-        <div class="nav-links">
-            <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">Experience</a>
-            <a href="#" class="nav-link">Skills</a>
-            <a href="#" class="nav-link">Activities</a>
-            <a href="#" class="nav-link">Contact</a>
-        </div>
+        <div class="logo">Abdulrahmane Adham</div>
     </header>
     
     <!-- Hero Section -->
     <section class="hero">
-        <h1 class="animate">Art Director & Brand Strategist</h1>
-        <h2 class="animate delay-1">Creating compelling visual experiences that drive engagement and growth</h2>
+        <h1 class="hero-name animate">Abdulrahmane Adham</h1>
+        <h2 class="hero-title animate delay-1">Art Director & Brand Strategist</h2>
         <div class="hero-btns">
-            <button class="btn btn-primary animate delay-2">View Portfolio</button>
-            <button class="btn btn-outline animate delay-3">Contact Me</button>
+            <a href="https://abdulrahman-adham.myportfolio.com/" class="btn btn-primary animate delay-2">View Portfolio</a>
+            <a href="mailto:abd.moh.adham@gmail.com" class="btn btn-outline animate delay-3">Contact Me</a>
         </div>
     </section>
     
@@ -859,6 +840,62 @@
                                 <li>Collaborated with Marketing Department to combine visual appeal with business strategy, <span class="highlight">boosting conversion rates by 15%</span></li>
                             </ul>
                         </div>
+                        
+                        <!-- Groovy Antoid -->
+                        <div class="timeline-item animate delay-5" onclick="toggleExpand(this)">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Project Manager & Lead Designer</div>
+                                    <div class="job-company">
+                                        <i class="fas fa-building"></i> Groovy Antoid
+                                    </div>
+                                </div>
+                                <div class="job-date">Oct 2019 - Mar 2021</div>
+                            </div>
+                            <div class="job-skills">
+                                <div class="job-skill">Project Management</div>
+                                <div class="job-skill">Business Development</div>
+                                <div class="job-skill">Market Analysis</div>
+                                <div class="job-skill">Game Development</div>
+                            </div>
+                            <div class="job-summary">Managed game studio projects and business development</div>
+                            <ul class="job-details">
+                                <li>Managed <span class="highlight">10+ game studio projects</span> with 100% on-time delivery</li>
+                                <li>Maintained quality standards across all deliverables</li>
+                                <li>Led business development initiatives that saw a <span class="highlight">150% growth</span></li>
+                                <li>Formed <span class="highlight">5+ strategic partnerships</span></li>
+                                <li>Conducted market analysis to identify new business opportunities</li>
+                                <li>Resulted in the launch of <span class="highlight">3 successful hit game titles</span></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Hero Games -->
+                        <div class="timeline-item animate delay-6" onclick="toggleExpand(this)">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Game Artist & UI/UX Designer</div>
+                                    <div class="job-company">
+                                        <i class="fas fa-building"></i> Hero Games
+                                    </div>
+                                </div>
+                                <div class="job-date">Mar 2017 - Oct 2019</div>
+                            </div>
+                            <div class="job-skills">
+                                <div class="job-skill">UI/UX Design</div>
+                                <div class="job-skill">Game Art</div>
+                                <div class="job-skill">Marketing Visuals</div>
+                                <div class="job-skill">Market Research</div>
+                            </div>
+                            <div class="job-summary">Led art process for successful mobile games</div>
+                            <ul class="job-details">
+                                <li>Led the art process for over <span class="highlight">20 games</span>, with 5 published titles</li>
+                                <li>Created the highly successful <span class="highlight">Wood Shop</span>, achieving <span class="highlight">60 million downloads</span></li>
+                                <li>Designed icons, UI elements, and marketing visuals for iOS and Android games</li>
+                                <li>Contributed to an <span class="highlight">increase in downloads</span> for published titles</li>
+                                <li>Conducted competitive product research for new game concepts</li>
+                                <li>Collaborated with cross-functional teams to ensure seamless integration of art assets</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -897,14 +934,11 @@
     
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-logo">Abdulrahman Adham</div>
+        <div class="footer-logo">Abdulrahmane Adham</div>
         <div class="footer-links">
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abdulrahman-adham-814555158/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <div class="copyright">© 2024 Abdulrahman Adham. All rights reserved.</div>
+        <div class="copyright">© 2024 Abdulrahmane Adham. All rights reserved.</div>
     </footer>
 
     <script>
